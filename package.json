@@ -1,0 +1,44 @@
+{
+  "name": "node-typescript-base",
+  "version": "1.0.0",
+  "description": "Base code for Node.js with Typescript",
+  "main": "src/main.ts",
+  "scripts": {
+    "dev": "nodemon src/main.ts",
+    "debug": "nodemon --inspect src/main.ts",
+    "start": "node src/main.ts",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint './src/**/*.{ts,tsx}'",
+    "lint:fix": "eslint --fix './src/**/*.{ts,tsx}'"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.6.1",
+    "@typescript-eslint/parser": "^2.6.1",
+    "eslint": "^6.6.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.5.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-prettier": "^3.1.1",
+    "husky": "^3.0.9",
+    "lint-staged": "^9.4.2",
+    "nodemon": "^1.19.4",
+    "prettier": "^1.19.1",
+    "ts-node": "^8.5.0",
+    "typescript": "^3.7.2"
+  }
+}
